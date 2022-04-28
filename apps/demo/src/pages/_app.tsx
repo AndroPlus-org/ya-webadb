@@ -131,13 +131,13 @@ function App({ Component, pageProps }: AppProps) {
                         <div className={classNames.title}>Android Web Toolbox</div>
                     </StackItem>
 
-                    <!-- <IconButton
+                    <IconButton
                         iconProps={{ iconName: 'PersonFeedback' }}
                         title="Feedback"
                         as="a"
                         href="https://github.com/yume-chan/ya-webadb/issues/new"
                         target="_blank"
-                    /> -->
+                    />
                 </Stack>
 
                 <Stack grow horizontal verticalFill disableShrink styles={{ root: { minHeight: 0, overflow: 'hidden', lineHeight: '1.5' } }}>
