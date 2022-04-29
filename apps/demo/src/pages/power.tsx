@@ -49,21 +49,21 @@ const Power: NextPage = () => {
 
             <div style={{ marginTop: 20 }}>
                 <DefaultButton text="Qualcomm EDL Mode へ再起動" disabled={!globalState.device} onClick={() => globalState.device!.power.qualcommEdlMode()} />
-                <TooltipHost content={<span>Only works on some Qualcomm devices.</span>}>
+                <TooltipHost content={<span>一部の Qualcomm デバイスでのみ動作します。</span>}>
                     <Icon style={{ verticalAlign: 'middle', marginLeft: 4, fontSize: 18 }} iconName={Icons.Info} />
                 </TooltipHost>
             </div>
 
             <div style={{ marginTop: 20 }}>
                 <DefaultButton text="Samsung Odin Download Mode へ再起動" disabled={!globalState.device} onClick={() => globalState.device!.power.samsungOdin()} />
-                <TooltipHost content={<span>Only works on Samsung devices.</span>}>
+                <TooltipHost content={<span>一部の Samsung デバイスでのみ動作します。</span>}>
                     <Icon style={{ verticalAlign: 'middle', marginLeft: 4, fontSize: 18 }} iconName={Icons.Info} />
                 </TooltipHost>
             </div>
 
             <div style={{ marginTop: 20 }}>
                 <DefaultButton text="Factory へ再起動" disabled={!globalState.device} onClick={() => globalState.device!.power.reboot('factory')} />
-                <TooltipHost content={<span>Only works on some devices.</span>}>
+                <TooltipHost content={<span>一部のデバイスでのみ動作します。</span>}>
                     <Icon style={{ verticalAlign: 'middle', marginLeft: 4, fontSize: 18 }} iconName={Icons.Info} />
                 </TooltipHost>
             </div>

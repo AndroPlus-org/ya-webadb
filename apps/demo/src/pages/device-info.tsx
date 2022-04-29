@@ -82,7 +82,7 @@ const DeviceInfo: NextPage = () => {
                 <code>ro.treble.enabled</code>
                 <span> の値</span>
             </MessageBar>
-            <span>Treble 対応: {globalState.device?.getProp('ro.treble.enabled'):'false'}</span>
+            <span>Treble 対応: {globalState.device!.adb.getProp('ro.treble.enabled')}</span>
             <Separator />
 
             <MessageBar>
