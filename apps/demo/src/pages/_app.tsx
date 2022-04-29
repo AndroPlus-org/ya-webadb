@@ -15,32 +15,32 @@ const ROUTES = [
     {
         url: '/',
         icon: Icons.Bookmark,
-        name: 'README',
+        name: '説明',
     },
     {
         url: '/device-info',
         icon: Icons.Phone,
-        name: 'Device Info',
+        name: 'デバイス情報',
     },
     {
         url: '/file-manager',
         icon: Icons.Folder,
-        name: 'File Manager',
+        name: 'ファイルマネージャー',
     },
     {
         url: '/framebuffer',
         icon: Icons.Camera,
-        name: 'Screen Capture',
+        name: 'スクリーンショット',
     },
     {
         url: '/shell',
         icon: Icons.WindowConsole,
-        name: 'Interactive Shell',
+        name: 'ADB Shell',
     },
     {
         url: '/scrcpy',
         icon: Icons.PhoneLaptop,
-        name: 'Scrcpy',
+        name: 'Scrcpy (ミラーリング)',
     },
     {
         url: '/tcpip',
@@ -50,22 +50,22 @@ const ROUTES = [
     {
         url: '/install',
         icon: Icons.Box,
-        name: 'Install APK',
+        name: 'APK インストール',
     },
     {
         url: '/power',
         icon: Icons.Power,
-        name: 'Power Menu',
+        name: '電源メニュー',
     },
     {
         url: '/bug-report',
         icon: Icons.Bug,
-        name: 'Bug Report',
+        name: 'バグレポート',
     },
     {
         url: '/packet-log',
         icon: Icons.TextGrammarError,
-        name: 'Packet Log',
+        name: 'パケットログ',
     },
 ];
 
@@ -122,7 +122,7 @@ function App({ Component, pageProps }: AppProps) {
                 <Stack className={classNames['title-container']} horizontal verticalAlign="center">
                     <IconButton
                         checked={leftPanelVisible}
-                        title="Toggle Menu"
+                        title="トグルメニュー"
                         iconProps={{ iconName: Icons.Navigation }}
                         onClick={toggleLeftPanel}
                     />
@@ -133,9 +133,9 @@ function App({ Component, pageProps }: AppProps) {
 
                     <IconButton
                         iconProps={{ iconName: 'PersonFeedback' }}
-                        title="Feedback"
+                        title="フィードバック"
                         as="a"
-                        href="https://github.com/yume-chan/ya-webadb/issues/new"
+                        href="https://github.com/AndroPlus-org/ya-webadb/issues/new"
                         target="_blank"
                     />
                 </Stack>

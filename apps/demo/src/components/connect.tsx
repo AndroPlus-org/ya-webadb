@@ -33,7 +33,7 @@ function _Connect(): JSX.Element | null {
             setSupported(supported);
 
             if (!supported) {
-                globalState.showErrorDialog('Your browser does not support WebUSB standard, which is required for this site to work.\n\nLatest version of Google Chrome, Microsoft Edge, or other Chromium-based browsers are required.');
+                globalState.showErrorDialog('お使いのブラウザは、本サイトの動作に必要な WebUSB API に対応していません。\n\nGoogle Chrome や Microsoft Edge など、Chromium ベースのブラウザの最新版が必要です。');
                 return;
             }
 
@@ -66,7 +66,7 @@ function _Connect(): JSX.Element | null {
     }, []);
 
     const addWsBackend = useCallback(() => {
-        const address = window.prompt('Enter the address of WebSockify server');
+        const address = window.prompt('WebSockify サーバーのアドレスを入力してください');
         if (!address) {
             return;
         }
@@ -94,12 +94,12 @@ function _Connect(): JSX.Element | null {
     }, []);
 
     const addTcpBackend = useCallback(() => {
-        const host = window.prompt('Enter the address of device');
+        const host = window.prompt('デバイスのアドレスを入力してください');
         if (!host) {
             return;
         }
 
-        const port = window.prompt('Enter the port of device', '5555');
+        const port = window.prompt('デバイスのポートを入力してください', '5555');
         if (!port) {
             return;
         }
@@ -247,8 +247,8 @@ function _Connect(): JSX.Element | null {
         >
             <Dropdown
                 disabled={!!globalState.device || backendOptions.length === 0}
-                label="Available devices"
-                placeholder="No available devices"
+                label="利用できるデバイス"
+                placeholder="デバイスがありません"
                 options={backendOptions}
                 styles={DropdownStyles}
                 dropdownWidth={300}
@@ -262,7 +262,7 @@ function _Connect(): JSX.Element | null {
                         <StackItem grow shrink>
                             <PrimaryButton
                                 iconProps={{ iconName: Icons.PlugConnected }}
-                                text="Connect"
+                                text="接続"
                                 disabled={!selectedBackend}
                                 primary={!!selectedBackend}
                                 styles={{ root: { width: '100%' } }}
@@ -272,9 +272,9 @@ function _Connect(): JSX.Element | null {
                         <StackItem grow shrink>
                             <DefaultButton
                                 iconProps={{ iconName: Icons.AddCircle }}
-                                text="Add"
+                                text="追加"
                                 split
-                                splitButtonAriaLabel="Add other connection type"
+                                splitButtonAriaLabel="他の接続方法を追加"
                                 menuProps={addMenuProps}
                                 disabled={!supported}
                                 primary={!selectedBackend}
@@ -287,7 +287,7 @@ function _Connect(): JSX.Element | null {
                 : (
                     <DefaultButton
                         iconProps={{ iconName: Icons.PlugDisconnected }}
-                        text="Disconnect"
+                        text="接続解除"
                         onClick={disconnect}
                     />
                 )}
@@ -295,8 +295,8 @@ function _Connect(): JSX.Element | null {
             <Dialog
                 hidden={!connecting}
                 dialogContentProps={{
-                    title: 'Connecting...',
-                    subText: 'Please authorize the connection on your device'
+                    title: '接続中...',
+                    subText: 'お使いの端末で接続を許可してください'
                 }}
             >
                 <ProgressIndicator />

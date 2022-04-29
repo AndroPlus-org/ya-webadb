@@ -98,7 +98,7 @@ const BugReportPage: NextPage = () => {
                 <title>バグレポート - Android ウェブツール</title>
             </Head>
 
-            <MessageBar messageBarType={MessageBarType.info}>This is the `bugreport`/`bugreportz` tool in Android</MessageBar>
+            <MessageBar messageBarType={MessageBarType.info}>Android の `bugreport`/`bugreportz` ツールです</MessageBar>
 
             <StackItem>
                 <PrimaryButton

@@ -61,21 +61,21 @@ const DeviceInfo: NextPage = () => {
                 <code>ro.product.name</code>
                 <span> の値</span>
             </MessageBar>
-            <span>Product Name: {globalState.device?.product}</span>
+            <span>プロダクト名: {globalState.device?.product}</span>
             <Separator />
 
             <MessageBar>
                 <code>ro.product.model</code>
                 <span> の値</span>
             </MessageBar>
-            <span>Model Name: {globalState.device?.model}</span>
+            <span>モデル名: {globalState.device?.model}</span>
             <Separator />
 
             <MessageBar>
                 <code>ro.product.device</code>
                 <span> の値</span>
             </MessageBar>
-            <span>Device Name: {globalState.device?.device}</span>
+            <span>デバイス名: {globalState.device?.device}</span>
             <Separator />
 
             <MessageBar>

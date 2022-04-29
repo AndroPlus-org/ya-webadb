@@ -40,9 +40,9 @@ const MobileDataTypeOptions =
                 'h+': 'HSPA+',
                 'lte': 'LTE',
                 'lte+': 'LTE+',
-                'dis': 'Disabled',
-                'not': 'Not default SIM',
-                'null': 'Unknown',
+                'dis': '無効',
+                'not': '非デフォルト SIM',
+                'null': '不明',
             }[key],
         }));
 
@@ -51,11 +51,11 @@ const StatusBarModeOptions =
         .map((key) => ({
             key,
             text: {
-                'opaque': 'Opaque',
-                'translucent': 'Translucent',
-                'semi-transparent': 'Semi-transparent',
-                'transparent': 'Transparent',
-                'warning': 'Warning',
+                'opaque': '不透明',
+                'translucent': 'トランスルーセント',
+                'semi-transparent': '半透明',
+                'transparent': '透明',
+                'warning': '警告',
             }[key],
         }));
 
@@ -121,7 +121,7 @@ const FEATURES: FeatureDefinition[][] = [
     [
         {
             key: 'batteryLevel',
-            label: 'Battery Level',
+            label: 'バッテリー残量',
             type: 'number',
             min: 0,
             max: 100,
@@ -131,14 +131,14 @@ const FEATURES: FeatureDefinition[][] = [
         },
         {
             key: 'batteryCharging',
-            label: 'Battery Charging',
+            label: '充電中',
             type: 'boolean',
             initial: false,
             onChange: (value) => state.demoMode!.setBatteryCharging(value as boolean),
         },
         {
             key: 'powerSaveMode',
-            label: 'Power Save Mode',
+            label: '省電力モード',
             type: 'boolean',
             initial: false,
             onChange: (value) => state.demoMode!.setPowerSaveMode(value as boolean),
@@ -147,7 +147,7 @@ const FEATURES: FeatureDefinition[][] = [
     [
         {
             key: 'wifiSignalStrength',
-            label: 'Wifi Signal Strength',
+            label: 'Wi-Fi 信号強度',
             type: 'select',
             options: SignalStrengthOptions,
             initial: DemoModeSignalStrength.Level4,
@@ -155,14 +155,14 @@ const FEATURES: FeatureDefinition[][] = [
         },
         {
             key: 'airplaneMode',
-            label: 'Airplane Mode',
+            label: '機内モード',
             type: 'boolean',
             initial: false,
             onChange: (value) => state.demoMode!.setAirplaneMode(value as boolean),
         },
         {
             key: 'mobileDataType',
-            label: 'Mobile Data Type',
+            label: 'モバイルデータタイプ',
             type: 'select',
             options: MobileDataTypeOptions,
             initial: 'lte',
@@ -170,7 +170,7 @@ const FEATURES: FeatureDefinition[][] = [
         },
         {
             key: 'mobileSignalStrength',
-            label: 'Mobile Signal Strength',
+            label: 'モバイル信号強度',
             type: 'select',
             options: SignalStrengthOptions,
             initial: DemoModeSignalStrength.Level4,
@@ -180,7 +180,7 @@ const FEATURES: FeatureDefinition[][] = [
     [
         {
             key: 'statusBarMode',
-            label: 'Status Bar Mode',
+            label: 'ステータスバーのモード',
             type: 'select',
             options: StatusBarModeOptions,
             initial: 'transparent',
@@ -188,42 +188,42 @@ const FEATURES: FeatureDefinition[][] = [
         },
         {
             key: 'vibrateMode',
-            label: 'Vibrate Mode Indicator',
+            label: 'マナーモードアイコン',
             type: 'boolean',
             initial: false,
             onChange: (value) => state.demoMode!.setVibrateModeEnabled(value as boolean),
         },
         {
             key: 'bluetoothConnected',
-            label: 'Bluetooth Indicator',
+            label: 'Bluetooth アイコン',
             type: 'boolean',
             initial: false,
             onChange: (value) => state.demoMode!.setBluetoothConnected(value as boolean),
         },
         {
             key: 'locatingIcon',
-            label: 'Locating Icon',
+            label: '位置情報アイコン',
             type: 'boolean',
             initial: false,
             onChange: (value) => state.demoMode!.setLocatingIcon(value as boolean),
         },
         {
             key: 'alarmIcon',
-            label: 'Alarm Icon',
+            label: 'アラームアイコン',
             type: 'boolean',
             initial: false,
             onChange: (value) => state.demoMode!.setAlarmIcon(value as boolean),
         },
         {
             key: 'notificationsVisibility',
-            label: 'Notifications Visibility',
+            label: '通知の表示',
             type: 'boolean',
             initial: true,
             onChange: (value) => state.demoMode!.setNotificationsVisibility(value as boolean),
         },
         {
             key: 'hour',
-            label: 'Clock Hour',
+            label: '時計の時間',
             type: 'number',
             min: 0,
             max: 23,
@@ -233,7 +233,7 @@ const FEATURES: FeatureDefinition[][] = [
         },
         {
             key: 'minute',
-            label: 'Clock Minute',
+            label: '時計の分',
             type: 'number',
             min: 0,
             max: 59,
@@ -328,21 +328,21 @@ export const DemoModePanel = observer(({
     return (
         <div style={{ padding: 12, overflow: 'hidden auto', ...style }}>
             <Toggle
-                label="Allowed"
+                label="許可"
                 disabled={!globalState.device}
                 checked={state.allowed}
                 onChange={handleAllowedChange}
             />
 
             <Toggle
-                label="Enabled"
+                label="有効"
                 disabled={!state.allowed}
                 checked={state.enabled}
                 onChange={handleEnabledChange}
             />
 
-            <div><strong>Note:</strong></div>
-            <div>Device may not support all options.</div>
+            <div><strong>⚠:</strong></div>
+            <div>すべてのオプションには対応していない場合があります。</div>
 
             {FEATURES.map((group, index) => (
                 <div key={index}>
