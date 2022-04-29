@@ -13,14 +13,14 @@
         "email": "cnsimonchan@live.com",
         "url": "https://chensi.moe/blog"
     },
-    "homepage": "https://github.com/yume-chan/ya-webadb/tree/master/libraries/event#readme",
+    "homepage": "https://github.com/AndroPlus-org/ya-webadb/tree/master/libraries/event#readme",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/yume-chan/ya-webadb.git",
+        "url": "git+https://github.com/AndroPlus-org/ya-webadb.git",
         "directory": "libraries/event"
     },
     "bugs": {
-        "url": "https://github.com/yume-chan/ya-webadb/issues"
+        "url": "https://github.com/AndroPlus-org/ya-webadb/issues"
     },
     "type": "module",
     "main": "esm/index.js",
