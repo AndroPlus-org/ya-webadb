@@ -89,7 +89,7 @@ class FileManagerState {
         });
         list.unshift({
             key: '/',
-            text: 'Device',
+            text: 'デバイス',
             onClick: () => this.pushPathQuery('/'),
         });
         list[list.length - 1].isCurrentItem = true;
@@ -104,7 +104,7 @@ class FileManagerState {
             case 0:
                 result.push({
                     key: 'upload',
-                    text: 'Upload',
+                    text: 'アップロード',
                     iconProps: {
                         iconName: Icons.CloudArrowUp,
                         style: { height: 20, fontSize: 20, lineHeight: 1.5 }
@@ -127,7 +127,7 @@ class FileManagerState {
                 if (this.selectedItems[0].type === LinuxFileType.File) {
                     result.push({
                         key: 'download',
-                        text: 'Download',
+                        text: 'ダウンロード',
                         iconProps: {
                             iconName: Icons.CloudArrowDown,
                             style: { height: 20, fontSize: 20, lineHeight: 1.5 }
@@ -154,7 +154,7 @@ class FileManagerState {
             default:
                 result.push({
                     key: 'delete',
-                    text: 'Delete',
+                    text: '削除',
                     iconProps: {
                         iconName: Icons.Delete,
                         style: { height: 20, fontSize: 20, lineHeight: 1.5 }
@@ -220,7 +220,7 @@ class FileManagerState {
         const list: IColumn[] = [
             {
                 key: 'type',
-                name: 'File Type',
+                name: 'ファイルタイプ',
                 iconName: Icons.Document20,
                 isIconOnly: true,
                 minWidth: ICON_SIZE,
@@ -251,7 +251,7 @@ class FileManagerState {
             },
             {
                 key: 'name',
-                name: 'Name',
+                name: '名前',
                 minWidth: 0,
                 isRowHeader: true,
                 onRender(item: AdbSyncEntry) {
@@ -264,7 +264,7 @@ class FileManagerState {
             },
             {
                 key: 'permission',
-                name: 'Permission',
+                name: '権限',
                 minWidth: 0,
                 isCollapsible: true,
                 onRender(item: AdbSyncEntry) {
@@ -273,7 +273,7 @@ class FileManagerState {
             },
             {
                 key: 'size',
-                name: 'Size',
+                name: 'サイズ',
                 minWidth: 0,
                 isCollapsible: true,
                 onRender(item: AdbSyncEntry) {
@@ -285,7 +285,7 @@ class FileManagerState {
             },
             {
                 key: 'mtime',
-                name: 'Last Modified Time',
+                name: '最終更新日',
                 minWidth: 150,
                 isCollapsible: true,
                 onRender(item: AdbSyncEntry) {
@@ -298,7 +298,7 @@ class FileManagerState {
             list.push(
                 {
                     key: 'ctime',
-                    name: 'Creation Time',
+                    name: '作成日',
                     minWidth: 150,
                     isCollapsible: true,
                     onRender(item: AdbSyncEntry) {
@@ -307,7 +307,7 @@ class FileManagerState {
                 },
                 {
                     key: 'atime',
-                    name: 'Last Access Time',
+                    name: '最終アクセス日',
                     minWidth: 150,
                     isCollapsible: true,
                     onRender(item: AdbSyncEntry) {
@@ -610,7 +610,7 @@ const FileManager: NextPage = (): JSX.Element | null => {
     return (
         <Stack {...RouteStackProps}>
             <Head>
-                <title>File Manager - Android Web Toolbox</title>
+                <title>ファイルマネージャー - Android ウェブツール</title>
             </Head>
 
             <CommandBar items={state.menuItems} />

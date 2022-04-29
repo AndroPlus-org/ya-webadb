@@ -98,13 +98,13 @@ const Install: NextPage = () => {
     return (
         <Stack {...RouteStackProps}>
             <Head>
-                <title>Install APK - Android Web Toolbox</title>
+                <title>APK インストール - Android ウェブツール</title>
             </Head>
 
             <Stack horizontal>
                 <DefaultButton
                     disabled={!globalState.device || state.installing}
-                    text="Open"
+                    text="開く"
                     onClick={state.install}
                 />
             </Stack>

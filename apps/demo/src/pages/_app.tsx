@@ -128,7 +128,7 @@ function App({ Component, pageProps }: AppProps) {
                     />
 
                     <StackItem grow>
-                        <div className={classNames.title}>Android Web Toolbox</div>
+                        <div className={classNames.title}>Android ウェブツール</div>
                     </StackItem>
 
                     <IconButton

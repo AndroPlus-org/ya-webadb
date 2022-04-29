@@ -32,61 +32,61 @@ const DeviceInfo: NextPage = () => {
     return (
         <Stack {...RouteStackProps}>
             <Head>
-                <title>Device Info - Android Web Toolbox</title>
+                <title>デバイス情報 - Android ウェブツール</title>
             </Head>
 
             <MessageBar>
-                <span>ADB protocol version decides the packet format between client and server. By now it has 2 versions:</span>
+                <span>ADB プロトコルバージョンはクライアントとサーバー間のパケット形式により決まります。現在2つのバージョンがあります:</span>
                 <br />
 
                 <code>01000000</code>
-                <span> used in Android versions until 8 (Oreo)</span>
+                <span> Android 8 (Oreo) 以前で利用</span>
                 <br />
 
                 <code>01000001</code>
-                <span> used in Android versions from 9 (Pie)</span>
+                <span> Android 9 (Pie) 以降で利用</span>
                 <br />
 
-                <span>For more information, you can check</span>
-                <ExternalLink href="https://chensi.moe/blog/2020/09/30/webadb-part2-connection/#version">my blog post</ExternalLink>
+
+                <ExternalLink href="https://chensi.moe/blog/2020/09/30/webadb-part2-connection/#version">こちらのページ</ExternalLink>
+                <span>で詳しい情報が掲載されています (英語)。</span>
             </MessageBar>
             <span>
-                <span>Protocol Version: </span>
+                <span>プロトコルバージョン: </span>
                 <code>{globalState.device?.protocolVersion?.toString(16).padStart(8, '0')}</code>
             </span>
             <Separator />
 
             <MessageBar>
                 <code>ro.product.name</code>
-                <span> field in Android Build Props</span>
+                <span> の値</span>
             </MessageBar>
             <span>Product Name: {globalState.device?.product}</span>
             <Separator />
 
             <MessageBar>
                 <code>ro.product.model</code>
-                <span> field in Android Build Props</span>
+                <span> の値</span>
             </MessageBar>
             <span>Model Name: {globalState.device?.model}</span>
             <Separator />
 
             <MessageBar>
                 <code>ro.product.device</code>
-                <span> field in Android Build Props</span>
+                <span> の値</span>
             </MessageBar>
             <span>Device Name: {globalState.device?.device}</span>
             <Separator />
 
             <MessageBar>
-                <span>Feature list decides how each individual commands should behavior.</span>
+                <span>各コマンドがどういった挙動をするべきか決める機能一覧です。</span>
                 <br />
 
-                <span>For example, it may indicate the availability of a new command, </span>
-                <span>{`or a workaround for an old bug is not required because it's already been fixed.`}</span>
+                <span>例えば新しいコマンドが使えることを示したり、古いバグへの対策が不要であることを示したりします。</span>
                 <br />
             </MessageBar>
             <span>
-                <span>Features: </span>
+                <span>機能: </span>
                 {globalState.device?.features?.map((feature, index) => (
                     <span key={feature}>
                         {index !== 0 && (<span>, </span>)}

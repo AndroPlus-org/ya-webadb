@@ -12,57 +12,57 @@ const Power: NextPage = () => {
     return (
         <Stack {...RouteStackProps}>
             <Head>
-                <title>Power Menu - Android Web Toolbox</title>
+                <title>電源メニュー - Android ウェブツール</title>
             </Head>
 
             <div>
-                <DefaultButton text="Reboot" disabled={!globalState.device} onClick={() => globalState.device!.power.reboot()} />
+                <DefaultButton text="再起動" disabled={!globalState.device} onClick={() => globalState.device!.power.reboot()} />
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <DefaultButton text="Power Off" disabled={!globalState.device} onClick={() => globalState.device!.power.powerOff()} />
+                <DefaultButton text="電源を切る" disabled={!globalState.device} onClick={() => globalState.device!.power.powerOff()} />
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <DefaultButton text="Press Power Button" disabled={!globalState.device} onClick={() => globalState.device!.power.powerButton()} />
+                <DefaultButton text="電源ボタンを押す" disabled={!globalState.device} onClick={() => globalState.device!.power.powerButton()} />
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <MessageBar messageBarType={MessageBarType.severeWarning}>Danger Zone Below</MessageBar>
+                <MessageBar messageBarType={MessageBarType.severeWarning}>以下の操作には気をつけてください</MessageBar>
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <DefaultButton text="Reboot to Bootloader" disabled={!globalState.device} onClick={() => globalState.device!.power.bootloader()} />
+                <DefaultButton text="Bootloader へ再起動" disabled={!globalState.device} onClick={() => globalState.device!.power.bootloader()} />
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <DefaultButton text="Reboot to Fastboot" disabled={!globalState.device} onClick={() => globalState.device!.power.fastboot()} />
+                <DefaultButton text="Fastboot へ再起動" disabled={!globalState.device} onClick={() => globalState.device!.power.fastboot()} />
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <DefaultButton text="Reboot to Recovery" disabled={!globalState.device} onClick={() => globalState.device!.power.recovery()} />
+                <DefaultButton text="Recovery へ再起動" disabled={!globalState.device} onClick={() => globalState.device!.power.recovery()} />
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <DefaultButton text="Reboot to Sideload" disabled={!globalState.device} onClick={() => globalState.device!.power.sideload()} />
+                <DefaultButton text="Sideload へ再起動" disabled={!globalState.device} onClick={() => globalState.device!.power.sideload()} />
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <DefaultButton text="Reboot to Qualcomm EDL Mode" disabled={!globalState.device} onClick={() => globalState.device!.power.qualcommEdlMode()} />
+                <DefaultButton text="Qualcomm EDL Mode へ再起動" disabled={!globalState.device} onClick={() => globalState.device!.power.qualcommEdlMode()} />
                 <TooltipHost content={<span>Only works on some Qualcomm devices.</span>}>
                     <Icon style={{ verticalAlign: 'middle', marginLeft: 4, fontSize: 18 }} iconName={Icons.Info} />
                 </TooltipHost>
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <DefaultButton text="Reboot to Samsung Odin Download Mode" disabled={!globalState.device} onClick={() => globalState.device!.power.samsungOdin()} />
+                <DefaultButton text="Samsung Odin Download Mode へ再起動" disabled={!globalState.device} onClick={() => globalState.device!.power.samsungOdin()} />
                 <TooltipHost content={<span>Only works on Samsung devices.</span>}>
                     <Icon style={{ verticalAlign: 'middle', marginLeft: 4, fontSize: 18 }} iconName={Icons.Info} />
                 </TooltipHost>
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <DefaultButton text="Reboot to Factory" disabled={!globalState.device} onClick={() => globalState.device!.power.reboot('factory')} />
+                <DefaultButton text="Factory へ再起動" disabled={!globalState.device} onClick={() => globalState.device!.power.reboot('factory')} />
                 <TooltipHost content={<span>Only works on some devices.</span>}>
                     <Icon style={{ verticalAlign: 'middle', marginLeft: 4, fontSize: 18 }} iconName={Icons.Info} />
                 </TooltipHost>

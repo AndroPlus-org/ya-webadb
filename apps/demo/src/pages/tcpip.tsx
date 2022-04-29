@@ -45,14 +45,14 @@ class TcpIpState {
                 key: 'refresh',
                 disabled: !globalState.device,
                 iconProps: { iconName: Icons.ArrowClockwise },
-                text: 'Refresh',
+                text: '更新',
                 onClick: this.queryInfo as VoidFunction,
             },
             {
                 key: 'apply',
                 disabled: !globalState.device,
                 iconProps: { iconName: Icons.Save },
-                text: 'Apply',
+                text: '適用',
                 onClick: this.applyServicePort,
             }
         ];
@@ -141,7 +141,7 @@ const TcpIp: NextPage = () => {
     return (
         <Stack {...RouteStackProps}>
             <Head>
-                <title>ADB over WiFi - Android Web Toolbox</title>
+                <title>ADB over WiFi - Android ウェブツール</title>
             </Head>
 
             <CommandBar items={state.commandBarItems} />
@@ -149,15 +149,15 @@ const TcpIp: NextPage = () => {
             <StackItem>
                 <MessageBar>
                     <Text>
-                        For WebADB to wirelessly connect to your device,
-                        <ExternalLink href="https://github.com/yume-chan/ya-webadb/discussions/245#discussioncomment-384030" spaceBefore spaceAfter>extra software</ExternalLink>
-                        is required.
+                        WebADB でデバイスにワイヤレス接続するには
+                        <ExternalLink href="https://github.com/yume-chan/ya-webadb/discussions/245#discussioncomment-384030" spaceBefore spaceAfter>追加のソフトウェア</ExternalLink>
+                        が必要です。
                     </Text>
                 </MessageBar>
             </StackItem>
             <StackItem>
                 <MessageBar >
-                    <Text>Your device will disconnect after changing ADB over WiFi config.</Text>
+                    <Text>ADB over WiFiの設定を変更すると、デバイスが切断されます。</Text>
                 </MessageBar>
             </StackItem>
 
@@ -167,8 +167,8 @@ const TcpIp: NextPage = () => {
                     label="service.adb.listen_addrs"
                     disabled
                     checked={!!state.serviceListenAddresses}
-                    onText="Enabled"
-                    offText="Disabled"
+                    onText="有効"
+                    offText="無効"
                 />
                 {state.serviceListenAddresses?.map((address) => (
                     <TextField
@@ -186,8 +186,8 @@ const TcpIp: NextPage = () => {
                     label="service.adb.tcp.port"
                     checked={state.servicePortEnabled}
                     disabled={!globalState.device || !!state.serviceListenAddresses}
-                    onText="Enabled"
-                    offText="Disabled"
+                    onText="有効"
+                    offText="無効"
                     onChange={handleServicePortEnabledChange}
                 />
                 <TextField
@@ -204,8 +204,8 @@ const TcpIp: NextPage = () => {
                     label="persist.adb.tcp.port"
                     disabled
                     checked={state.persistPortEnabled}
-                    onText="Enabled"
-                    offText="Disabled"
+                    onText="有効"
+                    offText="無効"
                 />
                 {state.persistPort && (
                     <TextField

@@ -206,14 +206,14 @@ class ScrcpyPageState {
                 key: 'start',
                 disabled: !globalState.device,
                 iconProps: { iconName: Icons.Play },
-                text: 'Start',
+                text: '開始',
                 onClick: this.start as VoidFunction,
             });
         } else {
             result.push({
                 key: 'stop',
                 iconProps: { iconName: Icons.Stop },
-                text: 'Stop',
+                text: '停止',
                 onClick: this.stop as VoidFunction,
             });
         }
@@ -222,7 +222,7 @@ class ScrcpyPageState {
             key: 'fullscreen',
             disabled: !this.running,
             iconProps: { iconName: Icons.FullScreenMaximize },
-            text: 'Fullscreen',
+            text: '全画面',
             onClick: () => { this.deviceView?.enterFullscreen(); },
         });
 
@@ -235,7 +235,7 @@ class ScrcpyPageState {
                 key: 'NavigationBar',
                 iconProps: { iconName: Icons.PanelBottom },
                 checked: this.navigationBarVisible,
-                text: 'Navigation Bar',
+                text: 'ナビバー',
                 onClick: action(() => {
                     this.navigationBarVisible = !this.navigationBarVisible;
                 }),
@@ -244,7 +244,7 @@ class ScrcpyPageState {
                 key: 'Log',
                 iconProps: { iconName: Icons.TextGrammarError },
                 checked: this.logVisible,
-                text: 'Log',
+                text: 'ログ',
                 onClick: action(() => {
                     this.logVisible = !this.logVisible;
                 }),
@@ -253,7 +253,7 @@ class ScrcpyPageState {
                 key: 'Settings',
                 iconProps: { iconName: Icons.Settings },
                 checked: this.settingsVisible,
-                text: 'Settings',
+                text: '設定',
                 onClick: action(() => {
                     this.settingsVisible = !this.settingsVisible;
                 }),
@@ -262,7 +262,7 @@ class ScrcpyPageState {
                 key: 'DemoMode',
                 iconProps: { iconName: Icons.Wand },
                 checked: this.demoModeVisible,
-                text: 'Demo Mode',
+                text: 'デモモード',
                 onClick: action(() => {
                     this.demoModeVisible = !this.demoModeVisible;
                 }),
@@ -770,20 +770,20 @@ const ConnectionDialog = observer(() => {
             >
                 <Stack tokens={CommonStackTokens}>
                     <ProgressIndicator
-                        label="1. Downloading scrcpy server..."
+                        label="1. scrcpy サーバーをダウンロード中..."
                         percentComplete={state.serverTotalSize ? state.serverDownloadedSize / state.serverTotalSize : undefined}
                         description={formatSpeed(state.debouncedServerDownloadedSize, state.serverTotalSize, state.serverDownloadSpeed)}
                     />
 
                     <ProgressIndicator
-                        label="2. Pushing scrcpy server to device..."
+                        label="2. scrcpy サーバーをデバイスに送信中..."
                         progressHidden={state.serverTotalSize === 0 || state.serverDownloadedSize !== state.serverTotalSize}
                         percentComplete={state.serverUploadedSize / state.serverTotalSize}
                         description={formatSpeed(state.debouncedServerUploadedSize, state.serverTotalSize, state.serverUploadSpeed)}
                     />
 
                     <ProgressIndicator
-                        label="3. Starting scrcpy server on device..."
+                        label="3. scrcpy サーバーをデバイスで起動中..."
                         progressHidden={state.serverTotalSize === 0 || state.serverUploadedSize !== state.serverTotalSize}
                     />
                 </Stack>
@@ -836,7 +836,7 @@ const Scrcpy: NextPage = () => {
     return (
         <Stack {...RouteStackProps}>
             <Head>
-                <title>Scrcpy - Android Web Toolbox</title>
+                <title>Scrcpy (ミラーリング) - Android ウェブツール</title>
             </Head>
 
             <CommandBar items={state.commandBarItems} farItems={state.commandBarFarItems} />
@@ -878,19 +878,19 @@ const Scrcpy: NextPage = () => {
                 </div>
 
                 <div style={{ padding: 12, overflow: 'hidden auto', display: state.settingsVisible ? 'block' : 'none', width: 300 }}>
-                    <div>Changes will take effect on next connection</div>
+                    <div>変更は次の接続から反映されます</div>
 
                     <Dropdown
-                        label="Encoder"
+                        label="エンコーダー"
                         options={state.encoders.map(item => ({ key: item, text: item }))}
                         selectedKey={state.selectedEncoder}
-                        placeholder="Connect once to retrieve encoder list"
+                        placeholder="接続すると一覧を取得します"
                         onChange={state.handleCurrentEncoderChange}
                     />
 
                     {state.decoders.length > 1 && (
                         <Dropdown
-                            label="Decoder"
+                            label="デコーダー"
                             options={state.decoders.map(item => ({ key: item.name, text: item.name, data: item }))}
                             selectedKey={state.selectedDecoder.name}
                             onChange={state.handleSelectedDecoderChange}
@@ -900,8 +900,8 @@ const Scrcpy: NextPage = () => {
                     <Toggle
                         label={
                             <>
-                                <span>{`Ignore decoder's codec arguments `}</span>
-                                <TooltipHost content="Some decoders don't support all H.264 profile/levels, so they request the device to encode at their highest-supported codec. However, some super old devices may not support that codec so their encoders will fail to start. Use this option to let device choose the codec to be used.">
+                                <span>{`デコーダーのコーデック引数を無視する `}</span>
+                                <TooltipHost content="デコーダーによっては、すべてのH.264プロファイル/レベルに対応していないため、デバイスに最も適したコーデックでエンコードするように要求します。しかし、かなり古いデバイスはそのコーデックをサポートしていない場合があり、その場合エンコーダーは起動に失敗します。このオプションを使用すると使用するコーデックを指定できます。">
                                     <Icon iconName={Icons.Info} />
                                 </TooltipHost>
                             </>
@@ -911,7 +911,7 @@ const Scrcpy: NextPage = () => {
                     />
 
                     <SpinButton
-                        label="Max Resolution (longer side, 0 = unlimited)"
+                        label="最大解像度 (長辺、0 = 無制限)"
                         labelPosition={Position.top}
                         value={state.resolution.toString()}
                         min={0}
@@ -921,7 +921,7 @@ const Scrcpy: NextPage = () => {
                     />
 
                     <SpinButton
-                        label="Max Bit Rate"
+                        label="最大ビットレート"
                         labelPosition={Position.top}
                         value={state.bitRate.toString()}
                         min={100}
@@ -933,8 +933,8 @@ const Scrcpy: NextPage = () => {
                     <Toggle
                         label={
                             <>
-                                <span>Use forward connection{' '}</span>
-                                <TooltipHost content="Old Android devices may not support reverse connection when using ADB over WiFi">
+                                <span>フォワードコネクションを使用する{' '}</span>
+                                <TooltipHost content="古いデバイスでは、ADB over WiFi を使用する際にフォワードコネクションに対応していない場合があります。">
                                     <Icon iconName={Icons.Info} />
                                 </TooltipHost>
                             </>

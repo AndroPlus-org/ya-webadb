@@ -76,14 +76,14 @@ const Shell: NextPage = (): JSX.Element | null => {
     return (
         <Stack {...RouteStackProps}>
             <Head>
-                <title>Interactive Shell - Android Web Toolbox</title>
+                <title>Shell - Android ウェブツール</title>
             </Head>
 
             <StackItem>
                 <Stack horizontal>
                     <StackItem grow>
                         <SearchBox
-                            placeholder="Find"
+                            placeholder="探す"
                             value={searchKeyword}
                             onChange={handleSearchKeywordChange}
                             onSearch={findNext}

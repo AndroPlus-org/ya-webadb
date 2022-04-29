@@ -94,26 +94,26 @@ const state = makeAutoObservable({
         return [
             this.running ? {
                 key: "stop",
-                text: "Stop",
+                text: "停止",
                 iconProps: { iconName: Icons.Stop },
                 onClick: () => this.stop(),
             } : {
                 key: "start",
-                text: "Start",
+                text: "開始",
                 disabled: this.logcat === undefined,
                 iconProps: { iconName: Icons.Play },
                 onClick: () => this.start(),
             },
             {
                 key: 'clear',
-                text: 'Clear',
+                text: '消去',
                 disabled: this.empty,
                 iconProps: { iconName: Icons.Delete },
                 onClick: () => this.clear(),
             },
             {
                 key: 'copyAll',
-                text: 'Copy Rows',
+                text: '行をコピー',
                 disabled: this.selectedCount === 0,
                 iconProps: { iconName: Icons.Copy },
                 onClick: () => {
@@ -279,7 +279,7 @@ const LogcatPage: NextPage = () => {
     return (
         <Stack {...RouteStackProps}>
             <Head>
-                <title>Logcat - Android Web Toolbox</title>
+                <title>Logcat - Android ウェブツール</title>
             </Head>
 
             <CommandBar items={state.commandBar} />

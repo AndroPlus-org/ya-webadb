@@ -67,14 +67,14 @@ const FrameBuffer: NextPage = (): JSX.Element | null => {
             key: 'start',
             disabled: !globalState.device,
             iconProps: { iconName: Icons.Camera, style: { height: 20, fontSize: 20, lineHeight: 1.5 } },
-            text: 'Capture',
+            text: '撮影',
             onClick: capture,
         },
         {
             key: 'Save',
             disabled: !state.imageData,
             iconProps: { iconName: Icons.Save, style: { height: 20, fontSize: 20, lineHeight: 1.5 } },
-            text: 'Save',
+            text: '保存',
             onClick: () => {
                 const canvas = canvasRef.current;
                 if (!canvas) {
@@ -95,7 +95,7 @@ const FrameBuffer: NextPage = (): JSX.Element | null => {
             key: 'DemoMode',
             iconProps: { iconName: Icons.Wand, style: { height: 20, fontSize: 20, lineHeight: 1.5 } },
             checked: state.demoModeVisible,
-            text: 'Demo Mode',
+            text: 'デモモード',
             onClick: state.toggleDemoModeVisible,
         },
         {
@@ -103,7 +103,7 @@ const FrameBuffer: NextPage = (): JSX.Element | null => {
             iconProps: { iconName: Icons.Info, style: { height: 20, fontSize: 20, lineHeight: 1.5 } },
             iconOnly: true,
             tooltipHostProps: {
-                content: 'Use ADB FrameBuffer command to capture a full-size, high-resolution screenshot.',
+                content: 'ADB FrameBuffer コマンドを使ってフルサイズ・高解像度のスクリーンショットを撮影します。',
                 calloutProps: {
                     calloutMaxWidth: 250,
                 }
@@ -114,7 +114,7 @@ const FrameBuffer: NextPage = (): JSX.Element | null => {
     return (
         <Stack {...RouteStackProps}>
             <Head>
-                <title>Screen Capture - Android Web Toolbox</title>
+                <title>スクリーンショット - Android ウェブツール</title>
             </Head>
 
             <CommandBar items={commandBarItems.get()} farItems={commandBarFarItems.get()} />

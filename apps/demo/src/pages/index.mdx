@@ -7,44 +7,37 @@ import { RouteStackProps } from "../utils";
 cspell: ignore cybojenix
 -->
 
-This is a demo for my <ExternalLink href="https://github.com/yume-chan/ya-webadb/">ya-webadb</ExternalLink> project, which can use ADB protocol to control Android phones, directly from Web browsers (or Node.js).
+<ExternalLink href="https://github.com/AndroPlus-org/ya-webadb">ya-webadb</ExternalLink> では、ウェブブラウザから ADB プロトコルを使ってデバイスをコントロールできます。
 
-It started because I want to try the <ExternalLink href="https://developer.mozilla.org/en-US/docs/Web/API/USB">WebUSB</ExternalLink> API, and because I have an Android phone. It's not production-ready, and I don't recommend normal users to try it. If you have any questions or suggestions, please file an issue at <ExternalLink href="https://github.com/yume-chan/ya-webadb/issues">here</ExternalLink>.
+WebUSB に対応した環境であれば、追加のドライバーインストールをすることなく簡単に接続できます。
 
-It was called "ya-webadb" (Yet Another WebADB), because there have already been several similar projects, for example:
+## セキュリティに関する懸念
 
-* <ExternalLink href="https://github.com/webadb/webadb.js">webadb/webadb.js</ExternalLink>
-* <ExternalLink href="https://github.com/cybojenix/WebADB">cybojenix/WebADB</ExternalLink>
+ウェブページから USB デバイス (特にスマートフォン) に直接アクセスすることは、**非常に危険です**。Firefox の開発者は、<ExternalLink href="https://mozilla.github.io/standards-positions/#webusb">それが有害である</ExternalLink>と見なし、WebUSB 標準の実装を拒否したほどです。
 
-However, they are all pretty simple and not maintained, so I decided to make my own.
+このページについては、以下の通り安全性を確保しています。
 
-## Security concerns
+1. ネイティブアプリとは異なり、ウェブアプリは確認なしにデバイスにアクセスすることはできません。ADB での接続確認ポップアップに加え、ブラウザはユーザーに許可を求め、ウェブアプリは選択されたデバイスにしかアクセスできません。
+2. このプロジェクトのすべてのソースコードは、<ExternalLink href="https://github.com/AndroPlus-org/ya-webadb">GitHub</ExternalLink> でオープンソース化されています。自分でレビューすることもできます（または、信頼できるコーディングに詳しい人を見つけてレビューしてもらうこともできます）。
+3. このサイトは、<ExternalLink href="https://github.com/AndroPlus-org/ya-webadb/blob/master/.github/workflows/nodejs.yml" spaceAfter>GitHub Actions</ExternalLink> によってビルド・デプロイされ、あなたが見るものがソースコードと全く同じであることを保証しています。
 
-Accessing USB devices (especially your phone) directly from a web page can be **very dangerous**. Firefox developers even refused to implement the WebUSB standard because they <ExternalLink href="https://mozilla.github.io/standards-positions/#webusb">considered it to be **harmful**</ExternalLink>.
+## 互換性
 
-However, I'm pretty confident about this demo, and here is a few reasons:
+現在 WebUSB API をサポートしているのは、Chromium ベースのブラウザ（Chrome、Microsoft Edge、Opera）のみです。前述したように、Firefox が実装する可能性は低いです。
 
-1. Unlike native apps, web apps can't access your devices silently. In addition to the connection verification popup that comes with ADB, browsers ask users for permission and web apps can only access the device you choose.
-2. All source code of this project is open sourced on <ExternalLink href="https://github.com/yume-chan/ya-webadb/">GitHub</ExternalLink>. You can review it yourself (or find someone you trust and knows coding to review it).
-3. This site is built and deployed by <ExternalLink href="https://github.com/yume-chan/ya-webadb/blob/master/.github/workflows/nodejs.yml" spaceAfter>GitHub Actions</ExternalLink> to ensure that what you see is exactly the same as the source code.
+## よくある質問
 
-## Compatibility
+### "Unable to claim interface" エラーが出る
 
-Currently, only Chromium-based browsers (Chrome, Microsoft Edge, Opera) support the WebUSB API. As mentioned before, it's unlikely for Firefox to implement it.
+1つの USB デバイスには、同時に1つのアプリからしかアクセスできません。以下を確認してください：
 
-## FAQ
+1. 公式 ADB サーバーを起動している (`adb kill-server` で停止できます).
+2. 他の Android 管理ツールを起動している
+3. 他の WebADB ページで既に接続されている
 
-### Got "Unable to claim interface" error
+### ワイヤレス接続（ADB over WiFi）は可能ですか？
 
-One USB device can only be accessed by one application at a time. Please make sure:
-
-1. Official ADB server is not running (stop it by `adb kill-server`).
-2. No other Android management tools are running.
-3. No other WebADB tabs have already connected to your device.
-
-### Can I connect my device wirelessly (ADB over WiFi)?
-
-Extra software is required to bridge the connection. See <ExternalLink href="https://github.com/yume-chan/ya-webadb/discussions/245#discussioncomment-384030">this discussion</ExternalLink>.
+接続の橋渡しをするために、別途ソフトウェアが必要です。 <ExternalLink href="https://github.com/yume-chan/ya-webadb/discussions/245#discussioncomment-384030">こちらの議論</ExternalLink>を確認してください。
 
 export default ({children}) => (
     <div style={{ height: '100%', padding: '0 16px', overflow: 'auto' }}>
