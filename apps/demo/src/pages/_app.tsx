@@ -116,6 +116,7 @@ function App({ Component, pageProps }: AppProps) {
         <ErrorDialogProvider>
             <Head>
                 <link rel="manifest" href="/manifest.json" />
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0606165858439985" crossorigin="anonymous"></script>
             </Head>
 
             <Stack verticalFill>
