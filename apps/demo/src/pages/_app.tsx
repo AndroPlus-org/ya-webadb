@@ -128,7 +128,7 @@ function App({ Component, pageProps }: AppProps) {
                     />
 
                     <StackItem grow>
-                        <div className={classNames.title}>Android ウェブツール</div>
+                        <div className={classNames.title}>Android 繧ｦ繧ｧ繝悶ヤ繝ｼ繝ｫ</div>
                     </StackItem>
 
                     <IconButton

@@ -94,26 +94,26 @@ const state = makeAutoObservable({
         return [
             this.running ? {
                 key: "stop",
-                text: "’â~",
+                text: "åœæ­¢",
                 iconProps: { iconName: Icons.Stop },
                 onClick: () => this.stop(),
             } : {
                 key: "start",
-                text: "ŠJn",
+                text: "é–‹å§‹",
                 disabled: this.logcat === undefined,
                 iconProps: { iconName: Icons.Play },
                 onClick: () => this.start(),
             },
             {
                 key: 'clear',
-                text: 'Á‹',
+                text: 'æ¶ˆå»',
                 disabled: this.empty,
                 iconProps: { iconName: Icons.Delete },
                 onClick: () => this.clear(),
             },
             {
                 key: 'copyAll',
-                text: 's‚ğƒRƒs[',
+                text: 'è¡Œã‚’ã‚³ãƒ”ãƒ¼',
                 disabled: this.selectedCount === 0,
                 iconProps: { iconName: Icons.Copy },
                 onClick: () => {
@@ -279,7 +279,7 @@ const LogcatPage: NextPage = () => {
     return (
         <Stack {...RouteStackProps}>
             <Head>
-                <title>Logcat - Android ƒEƒFƒuƒc[ƒ‹</title>
+                <title>Logcat - Android ã‚¦ã‚§ãƒ–ãƒ„ãƒ¼ãƒ«</title>
             </Head>
 
             <CommandBar items={state.commandBar} />

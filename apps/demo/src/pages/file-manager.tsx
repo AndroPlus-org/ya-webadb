@@ -89,7 +89,7 @@ class FileManagerState {
         });
         list.unshift({
             key: '/',
-            text: 'ƒfƒoƒCƒX',
+            text: 'ãƒ‡ãƒã‚¤ã‚¹',
             onClick: () => this.pushPathQuery('/'),
         });
         list[list.length - 1].isCurrentItem = true;
@@ -104,7 +104,7 @@ class FileManagerState {
             case 0:
                 result.push({
                     key: 'upload',
-                    text: 'ƒAƒbƒvƒ[ƒh',
+                    text: 'ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰',
                     iconProps: {
                         iconName: Icons.CloudArrowUp,
                         style: { height: 20, fontSize: 20, lineHeight: 1.5 }
@@ -127,7 +127,7 @@ class FileManagerState {
                 if (this.selectedItems[0].type === LinuxFileType.File) {
                     result.push({
                         key: 'download',
-                        text: 'ƒ_ƒEƒ“ƒ[ƒh',
+                        text: 'ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰',
                         iconProps: {
                             iconName: Icons.CloudArrowDown,
                             style: { height: 20, fontSize: 20, lineHeight: 1.5 }
@@ -154,7 +154,7 @@ class FileManagerState {
             default:
                 result.push({
                     key: 'delete',
-                    text: 'íœ',
+                    text: 'å‰Šé™¤',
                     iconProps: {
                         iconName: Icons.Delete,
                         style: { height: 20, fontSize: 20, lineHeight: 1.5 }
@@ -220,7 +220,7 @@ class FileManagerState {
         const list: IColumn[] = [
             {
                 key: 'type',
-                name: 'ƒtƒ@ƒCƒ‹ƒ^ƒCƒv',
+                name: 'ãƒ•ã‚¡ã‚¤ãƒ«ã‚¿ã‚¤ãƒ—',
                 iconName: Icons.Document20,
                 isIconOnly: true,
                 minWidth: ICON_SIZE,
@@ -251,7 +251,7 @@ class FileManagerState {
             },
             {
                 key: 'name',
-                name: '–¼‘O',
+                name: 'åå‰',
                 minWidth: 0,
                 isRowHeader: true,
                 onRender(item: AdbSyncEntry) {
@@ -264,7 +264,7 @@ class FileManagerState {
             },
             {
                 key: 'permission',
-                name: 'Œ ŒÀ',
+                name: 'æ¨©é™',
                 minWidth: 0,
                 isCollapsible: true,
                 onRender(item: AdbSyncEntry) {
@@ -273,7 +273,7 @@ class FileManagerState {
             },
             {
                 key: 'size',
-                name: 'ƒTƒCƒY',
+                name: 'ã‚µã‚¤ã‚º',
                 minWidth: 0,
                 isCollapsible: true,
                 onRender(item: AdbSyncEntry) {
@@ -285,7 +285,7 @@ class FileManagerState {
             },
             {
                 key: 'mtime',
-                name: 'ÅIXV“ú',
+                name: 'æœ€çµ‚æ›´æ–°æ—¥',
                 minWidth: 150,
                 isCollapsible: true,
                 onRender(item: AdbSyncEntry) {
@@ -298,7 +298,7 @@ class FileManagerState {
             list.push(
                 {
                     key: 'ctime',
-                    name: 'ì¬“ú',
+                    name: 'ä½œæˆæ—¥',
                     minWidth: 150,
                     isCollapsible: true,
                     onRender(item: AdbSyncEntry) {
@@ -307,7 +307,7 @@ class FileManagerState {
                 },
                 {
                     key: 'atime',
-                    name: 'ÅIƒAƒNƒZƒX“ú',
+                    name: 'æœ€çµ‚ã‚¢ã‚¯ã‚»ã‚¹æ—¥',
                     minWidth: 150,
                     isCollapsible: true,
                     onRender(item: AdbSyncEntry) {
@@ -610,7 +610,7 @@ const FileManager: NextPage = (): JSX.Element | null => {
     return (
         <Stack {...RouteStackProps}>
             <Head>
-                <title>ƒtƒ@ƒCƒ‹ƒ}ƒl[ƒWƒƒ[ - Android ƒEƒFƒuƒc[ƒ‹</title>
+                <title>ãƒ•ã‚¡ã‚¤ãƒ«ãƒžãƒãƒ¼ã‚¸ãƒ£ãƒ¼ - Android ã‚¦ã‚§ãƒ–ãƒ„ãƒ¼ãƒ«</title>
             </Head>
 
             <CommandBar items={state.menuItems} />

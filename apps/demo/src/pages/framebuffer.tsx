@@ -67,14 +67,14 @@ const FrameBuffer: NextPage = (): JSX.Element | null => {
             key: 'start',
             disabled: !globalState.device,
             iconProps: { iconName: Icons.Camera, style: { height: 20, fontSize: 20, lineHeight: 1.5 } },
-            text: 'B‰e',
+            text: 'æ’®å½±',
             onClick: capture,
         },
         {
             key: 'Save',
             disabled: !state.imageData,
             iconProps: { iconName: Icons.Save, style: { height: 20, fontSize: 20, lineHeight: 1.5 } },
-            text: '•Û‘¶',
+            text: 'ä¿å­˜',
             onClick: () => {
                 const canvas = canvasRef.current;
                 if (!canvas) {
@@ -95,7 +95,7 @@ const FrameBuffer: NextPage = (): JSX.Element | null => {
             key: 'DemoMode',
             iconProps: { iconName: Icons.Wand, style: { height: 20, fontSize: 20, lineHeight: 1.5 } },
             checked: state.demoModeVisible,
-            text: 'ƒfƒ‚ƒ‚[ƒh',
+            text: 'ãƒ‡ãƒ¢ãƒ¢ãƒ¼ãƒ‰',
             onClick: state.toggleDemoModeVisible,
         },
         {
@@ -103,7 +103,7 @@ const FrameBuffer: NextPage = (): JSX.Element | null => {
             iconProps: { iconName: Icons.Info, style: { height: 20, fontSize: 20, lineHeight: 1.5 } },
             iconOnly: true,
             tooltipHostProps: {
-                content: 'ADB FrameBuffer ƒRƒ}ƒ“ƒh‚ğg‚Á‚Äƒtƒ‹ƒTƒCƒYE‚‰ğ‘œ“x‚ÌƒXƒNƒŠ[ƒ“ƒVƒ‡ƒbƒg‚ğB‰e‚µ‚Ü‚·B',
+                content: 'ADB FrameBuffer ã‚³ãƒãƒ³ãƒ‰ã‚’ä½¿ã£ã¦ãƒ•ãƒ«ã‚µã‚¤ã‚ºãƒ»é«˜è§£åƒåº¦ã®ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚·ãƒ§ãƒƒãƒˆã‚’æ’®å½±ã—ã¾ã™ã€‚',
                 calloutProps: {
                     calloutMaxWidth: 250,
                 }
@@ -114,7 +114,7 @@ const FrameBuffer: NextPage = (): JSX.Element | null => {
     return (
         <Stack {...RouteStackProps}>
             <Head>
-                <title>ƒXƒNƒŠ[ƒ“ƒVƒ‡ƒbƒg - Android ƒEƒFƒuƒc[ƒ‹</title>
+                <title>ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚·ãƒ§ãƒƒãƒˆ - Android ã‚¦ã‚§ãƒ–ãƒ„ãƒ¼ãƒ«</title>
             </Head>
 
             <CommandBar items={commandBarItems.get()} farItems={commandBarFarItems.get()} />

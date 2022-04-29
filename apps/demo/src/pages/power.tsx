@@ -12,57 +12,57 @@ const Power: NextPage = () => {
     return (
         <Stack {...RouteStackProps}>
             <Head>
-                <title>ìdåπÉÅÉjÉÖÅ[ - Android ÉEÉFÉuÉcÅ[Éã</title>
+                <title>ÈõªÊ∫ê„É°„Éã„É•„Éº - Android „Ç¶„Çß„Éñ„ÉÑ„Éº„É´</title>
             </Head>
 
             <div>
-                <DefaultButton text="çƒãNìÆ" disabled={!globalState.device} onClick={() => globalState.device!.power.reboot()} />
+                <DefaultButton text="ÂÜçËµ∑Âãï" disabled={!globalState.device} onClick={() => globalState.device!.power.reboot()} />
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <DefaultButton text="ìdåπÇêÿÇÈ" disabled={!globalState.device} onClick={() => globalState.device!.power.powerOff()} />
+                <DefaultButton text="ÈõªÊ∫ê„ÇíÂàá„Çã" disabled={!globalState.device} onClick={() => globalState.device!.power.powerOff()} />
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <DefaultButton text="ìdåπÉ{É^ÉìÇâüÇ∑" disabled={!globalState.device} onClick={() => globalState.device!.power.powerButton()} />
+                <DefaultButton text="ÈõªÊ∫ê„Éú„Çø„É≥„ÇíÊäº„Åô" disabled={!globalState.device} onClick={() => globalState.device!.power.powerButton()} />
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <MessageBar messageBarType={MessageBarType.severeWarning}>à»â∫ÇÃëÄçÏÇ…ÇÕãCÇÇ¬ÇØÇƒÇ≠ÇæÇ≥Ç¢</MessageBar>
+                <MessageBar messageBarType={MessageBarType.severeWarning}>‰ª•‰∏ã„ÅÆÊìç‰Ωú„Å´„ÅØÊ∞ó„Çí„Å§„Åë„Å¶„Åè„Å†„Åï„ÅÑ</MessageBar>
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <DefaultButton text="Bootloader Ç÷çƒãNìÆ" disabled={!globalState.device} onClick={() => globalState.device!.power.bootloader()} />
+                <DefaultButton text="Bootloader „Å∏ÂÜçËµ∑Âãï" disabled={!globalState.device} onClick={() => globalState.device!.power.bootloader()} />
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <DefaultButton text="Fastboot Ç÷çƒãNìÆ" disabled={!globalState.device} onClick={() => globalState.device!.power.fastboot()} />
+                <DefaultButton text="Fastboot „Å∏ÂÜçËµ∑Âãï" disabled={!globalState.device} onClick={() => globalState.device!.power.fastboot()} />
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <DefaultButton text="Recovery Ç÷çƒãNìÆ" disabled={!globalState.device} onClick={() => globalState.device!.power.recovery()} />
+                <DefaultButton text="Recovery „Å∏ÂÜçËµ∑Âãï" disabled={!globalState.device} onClick={() => globalState.device!.power.recovery()} />
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <DefaultButton text="Sideload Ç÷çƒãNìÆ" disabled={!globalState.device} onClick={() => globalState.device!.power.sideload()} />
+                <DefaultButton text="Sideload „Å∏ÂÜçËµ∑Âãï" disabled={!globalState.device} onClick={() => globalState.device!.power.sideload()} />
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <DefaultButton text="Qualcomm EDL Mode Ç÷çƒãNìÆ" disabled={!globalState.device} onClick={() => globalState.device!.power.qualcommEdlMode()} />
+                <DefaultButton text="Qualcomm EDL Mode „Å∏ÂÜçËµ∑Âãï" disabled={!globalState.device} onClick={() => globalState.device!.power.qualcommEdlMode()} />
                 <TooltipHost content={<span>Only works on some Qualcomm devices.</span>}>
                     <Icon style={{ verticalAlign: 'middle', marginLeft: 4, fontSize: 18 }} iconName={Icons.Info} />
                 </TooltipHost>
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <DefaultButton text="Samsung Odin Download Mode Ç÷çƒãNìÆ" disabled={!globalState.device} onClick={() => globalState.device!.power.samsungOdin()} />
+                <DefaultButton text="Samsung Odin Download Mode „Å∏ÂÜçËµ∑Âãï" disabled={!globalState.device} onClick={() => globalState.device!.power.samsungOdin()} />
                 <TooltipHost content={<span>Only works on Samsung devices.</span>}>
                     <Icon style={{ verticalAlign: 'middle', marginLeft: 4, fontSize: 18 }} iconName={Icons.Info} />
                 </TooltipHost>
             </div>
 
             <div style={{ marginTop: 20 }}>
-                <DefaultButton text="Factory Ç÷çƒãNìÆ" disabled={!globalState.device} onClick={() => globalState.device!.power.reboot('factory')} />
+                <DefaultButton text="Factory „Å∏ÂÜçËµ∑Âãï" disabled={!globalState.device} onClick={() => globalState.device!.power.reboot('factory')} />
                 <TooltipHost content={<span>Only works on some devices.</span>}>
                     <Icon style={{ verticalAlign: 'middle', marginLeft: 4, fontSize: 18 }} iconName={Icons.Info} />
                 </TooltipHost>

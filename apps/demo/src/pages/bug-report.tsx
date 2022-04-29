@@ -95,7 +95,7 @@ const BugReportPage: NextPage = () => {
     return (
         <Stack {...RouteStackProps}>
             <Head>
-                <title>BugReport - Android �E�F�u�c�[��</title>
+                <title>バグレポート - Android ウェブツール</title>
             </Head>
 
             <MessageBar messageBarType={MessageBarType.info}>This is the `bugreport`/`bugreportz` tool in Android</MessageBar>
@@ -103,7 +103,7 @@ const BugReportPage: NextPage = () => {
             <StackItem>
                 <PrimaryButton
                     disabled={!state.bugReport}
-                    text="Generate BugReport"
+                    text="バグレポートを生成"
                     onClick={state.generateBugReport}
                 />
             </StackItem>
@@ -111,7 +111,7 @@ const BugReportPage: NextPage = () => {
             <StackItem>
                 <PrimaryButton
                     disabled={!state.bugReportZVersion?.supportStream}
-                    text="Generate Zipped BugReport (Streaming)"
+                    text="ZIP 圧縮したバグレポートを生成 (ストリーミング)"
                     onClick={state.generateBugReportZStream}
                 />
             </StackItem>
@@ -121,7 +121,7 @@ const BugReportPage: NextPage = () => {
                     <StackItem>
                         <PrimaryButton
                             disabled={!state.bugReportZVersion || state.bugReportZInProgress}
-                            text="Generate Zipped BugReport"
+                            text="ZIP 圧縮したバグレポートを生成"
                             onClick={state.generateBugReportZ}
                         />
                     </StackItem>
@@ -130,11 +130,11 @@ const BugReportPage: NextPage = () => {
                         <StackItem>
                             {state.bugReportZTotalSize ? (
                                 <span>
-                                    Progress: {state.bugReportZProgress} / {state.bugReportZTotalSize}
+                                    進捗: {state.bugReportZProgress} / {state.bugReportZTotalSize}
                                 </span>
                             ) : (
                                 <span>
-                                    Generating... Please wait
+                                    生成中... お待ちください
                                     {!state.bugReportZVersion!.supportProgress && ' (this device does not support progress)'}
                                 </span>
                             )}

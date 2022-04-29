@@ -246,7 +246,7 @@ const PacketLog: NextPage = () => {
     return (
         <Stack {...RouteStackProps} tokens={{}}>
             <Head>
-                <title>パケットログ - Android ウェブツール</title>
+                <title>繝代こ繝�繝医Ο繧ｰ - Android 繧ｦ繧ｧ繝悶ヤ繝ｼ繝ｫ</title>
             </Head>
 
             <CommandBar items={state.commandBarItems} />

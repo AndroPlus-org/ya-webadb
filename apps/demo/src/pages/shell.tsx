@@ -76,14 +76,14 @@ const Shell: NextPage = (): JSX.Element | null => {
     return (
         <Stack {...RouteStackProps}>
             <Head>
-                <title>Shell - Android ÉEÉFÉuÉcÅ[Éã</title>
+                <title>Shell - Android „Ç¶„Çß„Éñ„ÉÑ„Éº„É´</title>
             </Head>
 
             <StackItem>
                 <Stack horizontal>
                     <StackItem grow>
                         <SearchBox
-                            placeholder="íTÇ∑"
+                            placeholder="Êé¢„Åô"
                             value={searchKeyword}
                             onChange={handleSearchKeywordChange}
                             onSearch={findNext}
