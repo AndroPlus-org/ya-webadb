@@ -1,4 +1,4 @@
-import { IconButton, SearchBox, Stack, StackItem } from '@fluentui/react';
+import { IconButton, MessageBar, SearchBox, Stack, StackItem } from '@fluentui/react';
 import { reaction } from "mobx";
 import { observer } from "mobx-react-lite";
 import { NextPage } from "next";
@@ -78,6 +78,12 @@ const Shell: NextPage = (): JSX.Element | null => {
             <Head>
                 <title>Shell - Android ウェブツール</title>
             </Head>
+
+            <MessageBar>
+                <code>settings put system system_locales ja-JP</code>
+                <span> を実行して再起動すると言語が日本語になります。</span>
+                <span>MIUI 搭載デバイスでは開発者向けオプションで「USB デバッグ (セキュリティ)・USB debugging (Security)」を、ColorOS 搭載デバイスでは「認可の監視を無効化・Disable permission monitoring」をオンにしてください。</span>
+            </MessageBar>
 
             <StackItem>
                 <Stack horizontal>
