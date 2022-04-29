@@ -13,6 +13,7 @@ export enum AdbPropKey {
     Product = 'ro.product.name',
     Model = 'ro.product.model',
     Device = 'ro.product.device',
+    Treble = 'ro.treble.enabled',
     Features = 'features',
 }
 
@@ -146,6 +147,9 @@ export class Adb {
     private _device: string | undefined;
     public get device() { return this._device; }
 
+    private _treble: string | undefined;
+    public get treble() { return this._treble; }
+
     private _features: AdbFeatures[] | undefined;
     public get features() { return this._features; }
 
@@ -215,6 +219,9 @@ export class Adb {
                         break;
                     case AdbPropKey.Device:
                         this._device = value;
+                        break;
+                    case AdbPropKey.Treble:
+                        this._treble = value;
                         break;
                     case AdbPropKey.Features:
                         this._features = value!.split(',') as AdbFeatures[];
