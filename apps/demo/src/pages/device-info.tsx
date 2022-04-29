@@ -79,13 +79,6 @@ const DeviceInfo: NextPage = () => {
             <Separator />
 
             <MessageBar>
-                <code>ro.treble.enabled</code>
-                <span> の値</span>
-            </MessageBar>
-            <span>Treble 対応: {globalState.device?.treble}</span>
-            <Separator />
-
-            <MessageBar>
                 <span>各コマンドがどういった挙動をするべきか決める機能一覧です。</span>
                 <br />
 
